@@ -103,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
             else
             {
                 try {
+                    if (data.getData() == null)
+                        throw new Exception();
                     InputStream inputStream = getContentResolver().openInputStream(data.getData());
                     bitmap = BitmapFactory.decodeStream(inputStream);
                     barCodeImageView.setImageBitmap(bitmap);
